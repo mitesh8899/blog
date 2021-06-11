@@ -1,0 +1,26 @@
+<center>
+  Update Students
+  <%= form_for @student do |form| %>
+    <%= form.text_field :name %><br>
+    <% @student.errors.full_messages_for(:name).each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
+
+    <%= form.text_field :email %><br>
+    <% @student.errors.full_messages_for(:email).each do |message| %>
+      <div> <%= message %> </div>
+    <% end %>
+
+    <%= form.check_box :enroll_no %><br>  
+    <%= form.label :enroll_no, "I have enrollment_no" %><br>
+    <%= form.select :standard, ["4", "9", "11"] %> <hr>  
+    <%= form.radio_button :standard, "4" %><br>
+    <%= form.label :standard_5_8, "primary" %><br>
+    <%= form.radio_button :standard, "8" %><br>
+    <%= form.label :standard_9_10, "Secondary" %><br>
+    <%= form.radio_button :standard, "12" %><br>
+    <%= form.label :standard_10_12, "Highr-Secondary" %><br> 
+    <%= form.text_area :standard, size: "10*5" %><br>
+    <br><%= form.submit %>
+  <% end %>
+</center>

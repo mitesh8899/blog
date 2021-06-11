@@ -1,0 +1,18 @@
+<center>
+  Update Relatives
+  <%= form_for @relative do |form| %>
+    <%= form.text_field :name %><br>
+    <%= form.text_field :age %><br>
+    <%= form.check_box :age %><br>
+    <%= form.label :age, "I m yonger" %><br>
+    <%= form.select :age, ["1", "18", "36"] %> <hr>  
+    <%= form.radio_button :age,  "1"%><br>
+    <%= form.label  :age_1 , "teenage"%><br>
+    <%= form.radio_button :age , "18"%><br>
+    <%= form.label  :age_18 , "adult"%><br>
+    <%= form.radio_button :age , "36"%><br>
+    <%= form.label :age_36 , "oldage"%><br>
+    <%= form.text_area :name, size: "10*5"%><br>  
+    <%= form.submit %>
+  <% end %>
+</center>

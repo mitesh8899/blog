@@ -1,0 +1,49 @@
+<center>
+<h2>Student</h2>
+  <table>
+    <tr>
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Enroll_no</th>
+      <th scope="col">Standard</th>
+      <th scope="col">Email</th>
+      <th scop="col">Update</th>
+      <th scop="col">Detroy</th>
+      <th scop="col">Show</th>
+    </tr>
+  </thead>
+ 
+    <% @students.each do |student|%>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.enroll_no %></td>
+        <td><%= student.standard %></td>
+        <td><%= student.email %></td>
+        <td><%= link_to "Edit", edit_student_path(student.id), method: :get, class: "btn btn-secondary active" %></td>
+        <td><%= link_to "Delete", destroy_student_path(student.id), method: :delete, class: "btn btn-danger"%></td>  
+        <td><%= link_to "Show", student_path(student.id), method: :get, class: "btn btn-secondary active" %></td>  
+
+        </tr>  
+    <% end %>
+    
+  </table>
+  <br>
+  <%= link_to "New Student", new_student_path %>
+<div class="mb-3">
+<select class="form-select" aria-label="Default select example">
+<option selected>Open this semester menu</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+<option value="3">Three</option>
+<option value="4">Four</option>
+<option value="5">Five</option>
+<option value="6">Six</option>
+<option value="7">Seven</option>
+<option value="8">Eight</option>
+</select></div>
+
+
+</center>

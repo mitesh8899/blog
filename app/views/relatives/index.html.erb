@@ -1,0 +1,27 @@
+<h1>Relatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @relatives.each do |relative| %>
+      <tr>
+        <td><%= relative.name %></td>
+        <td><%= relative.age %></td>
+        <td><%= link_to "edit", edit_relative_path(relative.id), method: :get %></td>
+        <td><%= link_to "Delete", destroy_relative_path(relative.id),method: :delete %></td>  
+        <td><%= link_to "show", relative_path(relative.id), method: :get %></td
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "New Relative", new_relative_path %><br>
+</center>
+</body>
+</html>
